@@ -30,9 +30,11 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">Gallery of My Dog Bennett</h1>
         </header>
-        <GalleryList pictures={pictures} getPictures={getPictures}/>
+        <GalleryList 
+        pictures={pictures} 
+        getPictures={getPictures}/>
         {/* <img src="images/goat_small.jpg"/> */}
       </div>
     );

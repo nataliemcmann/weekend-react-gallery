@@ -10,7 +10,7 @@ function GalleryItem ({ picture, getPictures }) {
 
     if (click === false) {
         return (
-            <div>
+            <div className="item-container">
             <img 
             onClick={handleItemClick}
             src={picture.path} 
@@ -22,7 +22,7 @@ function GalleryItem ({ picture, getPictures }) {
         )
     } else {
         return (
-            <div>
+            <div className="item-container">
                 <p onClick={handleItemClick}>
                     {picture.description}
                 </p>

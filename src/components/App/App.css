@@ -13,6 +13,20 @@
   font-size: 1.5em;
 }
 
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
 .relative {
   width: 100%;
   max-width: 400px;
