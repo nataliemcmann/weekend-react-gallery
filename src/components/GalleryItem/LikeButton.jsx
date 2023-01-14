@@ -1,12 +1,17 @@
 import axios from 'axios';
 import { useState } from 'react';
+// import Button from '@mui/material/Button';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 function LikeButton ({ picture, getPictures }) {
     const [likeCount, setLikeCount] = useState(picture.likes);
+    const [clickStatus, setClickStatus] = useState(false);
 
     //handle button
     const handleClick = (event) => {
         event.preventDefault();
+        setClickStatus(true);
         setLikeCount(likeCount + 1);
         putLikes({picture, getPictures});
     }
@@ -23,9 +28,22 @@ function LikeButton ({ picture, getPictures }) {
         })
     }
 
-    return (
-        <button onClick={handleClick}>Like</button>
-    )
+    if (clickStatus === false) {
+        return (
+            <FavoriteBorderOutlinedIcon 
+            onClick={handleClick}
+            fontSize="large"
+            >Like</FavoriteBorderOutlinedIcon>
+        )
+    } else {
+        return (
+            <FavoriteIcon 
+            onClick={handleClick}
+            sx={{ color: '#efaac4'}}
+            fontSize="large"
+            >Like</FavoriteIcon>
+        )
+    }
 }
 
 export default LikeButton;

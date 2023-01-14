@@ -3,13 +3,32 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #f1f0f7;
   padding: 1em;
-  color: white;
+  color: #2c241d;
   margin-bottom: 1em;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  vertical-align: top;
+}
+
+.relative {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+p {
+  font-size: 1em;
+  max-width: 400px;
+}
