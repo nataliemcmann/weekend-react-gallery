@@ -7,6 +7,7 @@ function GalleryList ( { pictures, getPictures }) {
         <div className="gallery-container">
         {pictures.map(picture => (
         <GalleryItem
+            className="item-containter"
             picture={picture} 
             key={picture.id}
             getPictures={getPictures}
