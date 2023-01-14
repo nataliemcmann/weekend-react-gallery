@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 
-function GalleryList ( { pictures }) {
+function GalleryList ( { pictures, getPictures }) {
 
     return (
         <>
         {pictures.map(picture => (
-        <GalleryItem picture={picture} key={picture.id}/>
+        <GalleryItem 
+            picture={picture} 
+            key={picture.id}
+            getPictures={getPictures}
+            />
         ))}
         </>
     )

@@ -1,22 +1,33 @@
 import { useState } from 'react';
+import LikeButton from './LikeButton.jsx';
 
-function GalleryItem ({picture}) {
+function GalleryItem ({ picture, getPictures }) {
     const [click, setClick] = useState(false);
 
-    const handleClick = () => {
+    const handleItemClick = () => {
         setClick(!click);
     }
 
     if (click === false) {
         return (
-            <div onClick={handleClick}>
-            <img src={picture.path} width="250" height="200"/> 
+            <div>
+            <img 
+            onClick={handleItemClick}
+            src={picture.path} 
+            width="250" height="200"
+            />
+            <LikeButton picture={picture} getPictures={getPictures}/>
+            <p>{picture.likes} people like this</p> 
             </div>
         )
     } else {
         return (
-            <div onClick={handleClick}>
-                <p>{picture.description}</p>
+            <div>
+                <p onClick={handleItemClick}>
+                    {picture.description}
+                </p>
+                <LikeButton picture={picture} getPictures={getPictures}/>
+                <p>{picture.likes} people like this</p> 
             </div>
         )
     }
