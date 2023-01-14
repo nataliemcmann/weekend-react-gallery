@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function LikeButton ({ picture, getPictures }) {
     const [likeCount, setLikeCount] = useState(picture.likes);

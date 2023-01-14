@@ -12,13 +12,15 @@ function GalleryItem ({ picture, getPictures }) {
 
     if (click === false) {
         return (
-            <Card sx={{ 
+            <Card 
+                sx={{ 
                 p:0.5,
                 bgcolor: '#f1f0f7',
-                }}>
+                }}
+                onClick={handleItemClick}
+                >
                 <CardContent>
                 <img 
-                onClick={handleItemClick}
                 src={picture.path} 
                 className="relative"
                 />
@@ -29,9 +31,11 @@ function GalleryItem ({ picture, getPictures }) {
         )
     } else {
         return (
-            <Card>
+            <Card
+                onClick={handleItemClick}
+                >
                 <CardContent>
-                <p onClick={handleItemClick}>
+                <p>
                     {picture.description}
                 </p>
                 <p>{picture.likes} people like this</p> 
