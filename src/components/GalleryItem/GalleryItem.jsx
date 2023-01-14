@@ -16,8 +16,8 @@ function GalleryItem ({ picture, getPictures }) {
             src={picture.path} 
             width="250" height="200"
             />
-            <LikeButton picture={picture} getPictures={getPictures}/>
             <p>{picture.likes} people like this</p> 
+            <LikeButton picture={picture} getPictures={getPictures}/>
             </div>
         )
     } else {
@@ -26,8 +26,8 @@ function GalleryItem ({ picture, getPictures }) {
                 <p onClick={handleItemClick}>
                     {picture.description}
                 </p>
-                <LikeButton picture={picture} getPictures={getPictures}/>
                 <p>{picture.likes} people like this</p> 
+                <LikeButton picture={picture} getPictures={getPictures}/>
             </div>
         )
     }
