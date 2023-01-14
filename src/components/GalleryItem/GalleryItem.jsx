@@ -17,10 +17,10 @@ function GalleryItem ({ picture, getPictures }) {
                 p:0.5,
                 bgcolor: '#f1f0f7',
                 }}
-                onClick={handleItemClick}
                 >
                 <CardContent>
-                <img 
+                <img
+                onClick={handleItemClick} 
                 src={picture.path} 
                 className="relative"
                 />
@@ -31,11 +31,9 @@ function GalleryItem ({ picture, getPictures }) {
         )
     } else {
         return (
-            <Card
-                onClick={handleItemClick}
-                >
+            <Card>
                 <CardContent>
-                <p>
+                <p onClick={handleItemClick}>
                     {picture.description}
                 </p>
                 <p>{picture.likes} people like this</p> 
