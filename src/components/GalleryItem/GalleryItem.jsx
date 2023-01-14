@@ -1,4 +1,12 @@
-//eventually put gallery item component here
-// it will be a single item
-//needs a click status (true/false hiding or not)
-//to toggle between the picture and the description
+import { useState } from 'react';
+
+function GalleryItem ({picture}) {
+
+    return (
+        <div>
+        <img src={picture.path} width="250" height="200"/> 
+        </div>
+    )
+}
+
+export default GalleryItem;

@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+//import components
+import GalleryList from '../GalleryList/GalleryList.jsx';
 
 function App() {
   //make some useState
@@ -30,12 +32,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p> 
-        {pictures.map(picture => (
-          <div>
-          <img src={picture.path} width="250" height="200"/> 
-          </div>
-        ))}
+        <GalleryList pictures={pictures}/>
         {/* <img src="images/goat_small.jpg"/> */}
       </div>
     );
