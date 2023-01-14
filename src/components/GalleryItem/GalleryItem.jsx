@@ -14,7 +14,7 @@ function GalleryItem ({ picture, getPictures }) {
             <img 
             onClick={handleItemClick}
             src={picture.path} 
-            width="250" height="200"
+            className="relative"
             />
             <p>{picture.likes} people like this</p> 
             <LikeButton picture={picture} getPictures={getPictures}/>
