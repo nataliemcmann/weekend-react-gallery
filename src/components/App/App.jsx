@@ -33,7 +33,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Dog Bennett</h1>
         </header>
-        <PictureFrom />
+        <PictureFrom getPictures={getPictures}/>
         <GalleryList 
         pictures={pictures} 
         getPictures={getPictures}/>

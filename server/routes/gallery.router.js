@@ -49,13 +49,16 @@ router.get('/', (req, res) => {
 
 
 // POST Route
-router.post('/', (req, rest) => {
+router.post('/', (req, res) => {
     console.log('POST successful');
     let path = req.body.path;
     let description = req.body.description;
+    console.log(path);
+    console.log(description);
 
     let sqlQuery = `
     INSERT INTO "gallery"
+    ("path", "description", "likes")
     VALUES 
     ($1, $2, 0)
     `;
