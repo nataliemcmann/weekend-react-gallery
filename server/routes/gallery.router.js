@@ -73,4 +73,22 @@ router.post('/', (req, res) => {
     })
 }); // END POST route 
 
+// DELETE Route
+router.delete('/delete/:id', (req, res) => {
+    console.log('DELETE successful');
+    let sqlQuery = `
+    DELETE FROM "gallery"
+    WHERE "id" = $1
+    `;
+    let sqlValues = [req.params.id];
+    pool.query(sqlQuery, sqlValues)
+    .then((dbRes) => {
+        res.sendStatus(200);
+    })
+    .catch((dbErr)=> {
+        console.log('DELETE route failed', dbErr);
+        res.sendStatus(500);
+    })
+}); //END DELETE route 
+
 module.exports = router;
