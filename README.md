@@ -23,10 +23,10 @@ I wanted a place to share pictures of my dog Bennett with my friends and family!
 
 ## Usage
 
-Clicking on a picture will flip it over so you can view the text description of the image. Clicking on the text description will flip it back to the picture. Underneath each picture/description, you can see how many people have liked the picture, and you have the option to press heart button to like the picture yourself! Once you've liked an image, the heart button will turn pink, but you can continue to click it and add likes. 
+Clicking on a picture will flip it over so you can view the text description of the image. Clicking on the text description will flip it back to the picture. Underneath each picture/description, you can see how many people have liked the picture, and you have the option to press heart button to like the picture yourself! Once you've liked an image, the heart button will turn pink, but you can continue to click it and add likes. Pictures can also be deleted using the trashcan icon.
 
 ## Known Bugs
-You can add images, using the form above the gallery. Unfortunately, file paths sources from the internet are blocked by Cross Origin Resource Policy, so only local files will show. You MUST use absolute file path for images to appear. 
+You should be able to add images using the form above the gallery. Unfortunately, file paths sourced from the internet are blocked by Cross Origin Resource Policy, so only local files will show. You MUST use absolute file path for images to appear. 
 
 ## Technologies 
 -Javascript 
