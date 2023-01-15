@@ -19,7 +19,12 @@ function LikeButton ({ picture, getPictures }) {
     //put route
     const putLikes = ({picture, getPictures}) => {
         console.log(picture.id);
-        axios.put(`/gallery/like/${picture.id}`)
+        axios({
+            method: 'PUT',
+            url: `/gallery/like/${picture.id}`,
+            data: {
+                likes: likeCount}
+        })
         .then((res) => {
             console.log('PUT request successful');
             getPictures();
