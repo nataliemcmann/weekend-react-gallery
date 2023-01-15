@@ -13,7 +13,9 @@ function GalleryItem ({ picture, getPictures }) {
     if (click === false) {
         return (
             <Card 
-                sx={{ 
+                sx={{
+                mt: 1.5,
+                mb: 3, 
                 p:0.5,
                 bgcolor: '#f1f0f7',
                 }}
