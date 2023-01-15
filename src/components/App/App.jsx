@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 //import components
 import GalleryList from '../GalleryList/GalleryList.jsx';
+import PictureFrom from '../PictureForm/PictureForm.jsx';
 
 function App() {
   //make some useState
@@ -32,6 +33,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Dog Bennett</h1>
         </header>
+        <PictureFrom />
         <GalleryList 
         pictures={pictures} 
         getPictures={getPictures}/>

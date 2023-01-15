@@ -47,4 +47,27 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+
+// POST Route
+router.post('/', (req, rest) => {
+    console.log('POST successful');
+    let path = req.body.path;
+    let description = req.body.description;
+
+    let sqlQuery = `
+    INSERT INTO "gallery"
+    VALUES 
+    ($1, $2, 0)
+    `;
+    let sqlValues = [path, description];
+    pool.query(sqlQuery, sqlValues)
+    .then((dbRes) => {
+        res.sendStatus(201);
+    })
+    .catch((dbErr) => {
+        console.log('POST route failed', dbErr);
+        res.sendStatus(500);
+    })
+}); // END POST route 
+
 module.exports = router;
