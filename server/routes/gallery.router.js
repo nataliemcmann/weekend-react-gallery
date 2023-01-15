@@ -47,4 +47,48 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+
+// POST Route
+router.post('/', (req, res) => {
+    console.log('POST successful');
+    let path = req.body.path;
+    let description = req.body.description;
+    console.log(path);
+    console.log(description);
+
+    let sqlQuery = `
+    INSERT INTO "gallery"
+    ("path", "description", "likes")
+    VALUES 
+    ($1, $2, 0)
+    `;
+    let sqlValues = [path, description];
+    pool.query(sqlQuery, sqlValues)
+    .then((dbRes) => {
+        res.sendStatus(201);
+    })
+    .catch((dbErr) => {
+        console.log('POST route failed', dbErr);
+        res.sendStatus(500);
+    })
+}); // END POST route 
+
+// DELETE Route
+router.delete('/delete/:id', (req, res) => {
+    console.log('DELETE successful');
+    let sqlQuery = `
+    DELETE FROM "gallery"
+    WHERE "id" = $1
+    `;
+    let sqlValues = [req.params.id];
+    pool.query(sqlQuery, sqlValues)
+    .then((dbRes) => {
+        res.sendStatus(200);
+    })
+    .catch((dbErr)=> {
+        console.log('DELETE route failed', dbErr);
+        res.sendStatus(500);
+    })
+}); //END DELETE route 
+
 module.exports = router;

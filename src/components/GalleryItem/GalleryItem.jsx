@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import LikeButton from './LikeButton.jsx';
+import DeleteButton from './DeleteButton.jsx';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
@@ -28,6 +29,7 @@ function GalleryItem ({ picture, getPictures }) {
                 />
                 <p>{picture.likes} people like this</p> 
                 <LikeButton picture={picture} getPictures={getPictures}/>
+                <DeleteButton picture={picture} getPictures={getPictures}/>
                 </CardContent>
             </Card>
         )
@@ -40,6 +42,7 @@ function GalleryItem ({ picture, getPictures }) {
                 </p>
                 <p>{picture.likes} people like this</p> 
                 <LikeButton picture={picture} getPictures={getPictures}/>
+                <DeleteButton picture={picture} getPictures={getPictures}/>
                 </CardContent>
             </Card>
         )
