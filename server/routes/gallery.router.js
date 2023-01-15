@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js')
-const galleryItems = require('../modules/gallery.data');
+// const galleryItems = require('../modules/gallery.data');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
@@ -20,7 +20,17 @@ router.put('/like/:id', (req, res) => {
 // GET Route
 router.get('/', (req, res) => {
     console.log('GET successful');
-    res.send(galleryItems);
+    let sqlQuery = `
+    SELECT * from "gallery"
+    `;
+    pool.query(sqlQuery)
+    .then((dbRes) => {
+        res.send(dbRes.rows);
+    })
+    .catch((dbErr) => {
+        console.log('GET route not working', dbErr);
+        res.sendStatus(500);
+    })
 }); // END GET Route
 
 module.exports = router;
