@@ -7,12 +7,11 @@ function PictureForm ({ getPictures }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //I don't want any picture that are not of Bennett
-        if (newPath && newDscrpt.includes('Bennett')) {
+        if (newPath) {
             postPicture();
         } else {
             //I would like to swap out the basic alert for a sweetalert
-            alert(`That's not a picture of Bennett!`);
+            alert(`Don't forget to add a picture!`);
         }
     }
 
